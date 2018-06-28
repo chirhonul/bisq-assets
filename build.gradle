@@ -29,6 +29,7 @@ artifacts {
 repositories {
     jcenter()
     maven { url 'https://jitpack.io' }
+    mavenLocal()
 }
 
 dependencies {
