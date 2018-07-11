@@ -22,35 +22,34 @@ import bisq.asset.Base58BitcoinAddressValidator;
 import bisq.asset.Coin;
 import bisq.asset.NetworkParametersAdapter;
 
-public class Xuez extends Coin {
+public class Diamond extends Coin {
 
-    public Xuez() {
-        super("Xuez", "XUEZ", new XuezAddressValidator());
+    public Diamond() {
+        super("Diamond", "DMD", new DiamondAddressValidator());
     }
 
 
-    public static class XuezAddressValidator extends Base58BitcoinAddressValidator {
+    public static class DiamondAddressValidator extends Base58BitcoinAddressValidator {
 
-        public XuezAddressValidator() {
-            super(new XuezParams());
+        public DiamondAddressValidator() {
+            super(new DiamondParams());
         }
 
         @Override
         public AddressValidationResult validate(String address) {
-
-            if (!address.matches("^[X][a-km-zA-HJ-NP-Z1-9]{25,34}$"))
+            if (!address.matches("^[d][a-km-zA-HJ-NP-Z1-9]{25,34}$"))
                 return AddressValidationResult.invalidStructure();
 
-            return AddressValidationResult.validAddress();
+            return super.validate(address);
         }
     }
 
 
-    public static class XuezParams extends NetworkParametersAdapter {
+    public static class DiamondParams extends NetworkParametersAdapter {
 
-        public XuezParams() {
-            addressHeader = 48;
-            p2shHeader = 12;
+        public DiamondParams() {
+            addressHeader = 90;
+            p2shHeader = 8;
             acceptableAddressCodes = new int[]{addressHeader, p2shHeader};
         }
     }

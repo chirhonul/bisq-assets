@@ -17,23 +17,27 @@
 
 package bisq.asset.coins;
 
-import bisq.asset.Base58BitcoinAddressValidator;
-import bisq.asset.Coin;
-import bisq.asset.NetworkParametersAdapter;
+import bisq.asset.AbstractAssetTest;
 
-public class BitcoinInstant extends Coin {
+import org.junit.Test;
 
-    public BitcoinInstant() {
-        super("Bitcoin Instant", "BTI", new Base58BitcoinAddressValidator(new BitcoinInstantParams()));
+public class PRiVCYTest extends AbstractAssetTest {
+
+    public PRiVCYTest() {
+        super(new PRiVCY());
     }
 
+    @Test
+    public void testValidAddresses() {
+        assertValidAddress("PEVFjfwsjKcPTDGdbaticuuARwzb3PEUdc");
+        assertValidAddress("PDwYxxuVi6buPTWypE1xCY65b58yedygAt");
+        assertValidAddress("PMJQkfnW4nXYpaYsmFE1UMoqHeEF68kjU3");
+    }
 
-    public static class BitcoinInstantParams extends NetworkParametersAdapter {
-
-        public BitcoinInstantParams() {
-            addressHeader = 0x66;
-            p2shHeader = 0x05;
-            acceptableAddressCodes = new int[]{addressHeader, p2shHeader};
-        }
+    @Test
+    public void testInvalidAddresses() {
+        assertInvalidAddress("DEVFjfwsjKcPTDGdbaticuuARwzb3PEUdc");
+        assertInvalidAddress("MJJGFhcf1PSxjxRG6DMyyi188UEXJbgZcY");
+        assertInvalidAddress("ZMJQkfnW4nXYpaYsmFE1UMoqHeEF68kjU3");
     }
 }

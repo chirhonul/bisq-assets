@@ -29,6 +29,7 @@ bisq.asset.coins.Counterparty
 bisq.asset.coins.Creativecoin
 bisq.asset.coins.Credits
 bisq.asset.coins.Cryptonite
+bisq.asset.coins.Cryptonodes
 bisq.asset.coins.DACash
 bisq.asset.coins.DarkNet
 bisq.asset.coins.Dash$Mainnet
@@ -38,6 +39,7 @@ bisq.asset.coins.Decent
 bisq.asset.coins.Decred
 bisq.asset.coins.DeepOnion
 bisq.asset.coins.Devcoin
+bisq.asset.coins.Diamond
 bisq.asset.coins.DigiMoney
 bisq.asset.coins.Dinero
 bisq.asset.coins.Dogecoin
@@ -61,14 +63,18 @@ bisq.asset.coins.LitecoinExtreme
 bisq.asset.coins.Litecoin$Mainnet
 bisq.asset.coins.Litecoin$Regtest
 bisq.asset.coins.Litecoin$Testnet
+bisq.asset.coins.Lobstex
 bisq.asset.coins.Madbyte
 bisq.asset.coins.Madcoin
 bisq.asset.coins.MaidSafeCoin
 bisq.asset.coins.MaxCoin
 bisq.asset.coins.Mazacoin
+bisq.asset.coins.MegaCoin
 bisq.asset.coins.MFCoin
 bisq.asset.coins.MicroCoin
 bisq.asset.coins.Monero
+bisq.asset.coins.Motion
+bisq.asset.coins.Myriadcoin
 bisq.asset.coins.Namecoin
 bisq.asset.coins.Nano
 bisq.asset.coins.NavCoin
@@ -86,6 +92,7 @@ bisq.asset.coins.Phore
 bisq.asset.coins.PIVX
 bisq.asset.coins.PostCoin
 bisq.asset.coins.Pranacoin
+bisq.asset.coins.PRiVCY
 bisq.asset.coins.ReddCoin
 bisq.asset.coins.Ringo
 bisq.asset.coins.Roicoin
@@ -114,6 +121,7 @@ bisq.asset.coins.Yenten
 bisq.asset.coins.Zcash
 bisq.asset.coins.Zcoin
 bisq.asset.coins.ZenCash
+bisq.asset.coins.ZeroOneCoin
 bisq.asset.tokens.BetterBetting
 bisq.asset.tokens.DaiStablecoin
 bisq.asset.tokens.Ellaism
@@ -131,5 +139,6 @@ bisq.asset.tokens.PixelPropertyToken
 bisq.asset.tokens.Qwark
 bisq.asset.tokens.RefToken
 bisq.asset.tokens.SosCoin
+bisq.asset.tokens.Tari
 bisq.asset.tokens.Verify
 bisq.asset.tokens.WildToken

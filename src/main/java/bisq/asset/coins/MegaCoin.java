@@ -22,35 +22,34 @@ import bisq.asset.Base58BitcoinAddressValidator;
 import bisq.asset.Coin;
 import bisq.asset.NetworkParametersAdapter;
 
-public class Xuez extends Coin {
+public class MegaCoin extends Coin {
 
-    public Xuez() {
-        super("Xuez", "XUEZ", new XuezAddressValidator());
+    public MegaCoin() {
+        super("MegaCoin", "MEC", new MegaCoinAddressValidator());
     }
 
 
-    public static class XuezAddressValidator extends Base58BitcoinAddressValidator {
+    public static class MegaCoinAddressValidator extends Base58BitcoinAddressValidator {
 
-        public XuezAddressValidator() {
-            super(new XuezParams());
+        public MegaCoinAddressValidator() {
+            super(new MegaCoinParams());
         }
 
         @Override
         public AddressValidationResult validate(String address) {
-
-            if (!address.matches("^[X][a-km-zA-HJ-NP-Z1-9]{25,34}$"))
+            if (!address.matches("^[M][a-km-zA-HJ-NP-Z1-9]{25,34}$"))
                 return AddressValidationResult.invalidStructure();
 
-            return AddressValidationResult.validAddress();
+            return super.validate(address);
         }
     }
 
 
-    public static class XuezParams extends NetworkParametersAdapter {
+    public static class MegaCoinParams extends NetworkParametersAdapter {
 
-        public XuezParams() {
-            addressHeader = 48;
-            p2shHeader = 12;
+        public MegaCoinParams() {
+            addressHeader = 50;
+            p2shHeader = 5;
             acceptableAddressCodes = new int[]{addressHeader, p2shHeader};
         }
     }

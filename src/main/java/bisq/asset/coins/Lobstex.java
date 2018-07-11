@@ -17,23 +17,12 @@
 
 package bisq.asset.coins;
 
-import bisq.asset.Base58BitcoinAddressValidator;
 import bisq.asset.Coin;
-import bisq.asset.NetworkParametersAdapter;
+import bisq.asset.RegexAddressValidator;
 
-public class BitcoinInstant extends Coin {
+public class Lobstex extends Coin {
 
-    public BitcoinInstant() {
-        super("Bitcoin Instant", "BTI", new Base58BitcoinAddressValidator(new BitcoinInstantParams()));
-    }
-
-
-    public static class BitcoinInstantParams extends NetworkParametersAdapter {
-
-        public BitcoinInstantParams() {
-            addressHeader = 0x66;
-            p2shHeader = 0x05;
-            acceptableAddressCodes = new int[]{addressHeader, p2shHeader};
-        }
+    public Lobstex() {
+        super("Lobstex", "LOBS", new RegexAddressValidator("^L[1-9A-Za-z]{26,33}$"));
     }
 }

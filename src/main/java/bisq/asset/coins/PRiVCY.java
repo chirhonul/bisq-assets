@@ -17,40 +17,22 @@
 
 package bisq.asset.coins;
 
-import bisq.asset.AddressValidationResult;
 import bisq.asset.Base58BitcoinAddressValidator;
 import bisq.asset.Coin;
 import bisq.asset.NetworkParametersAdapter;
 
-public class Xuez extends Coin {
+public class PRiVCY extends Coin {
 
-    public Xuez() {
-        super("Xuez", "XUEZ", new XuezAddressValidator());
+    public PRiVCY() {
+        super("PRiVCY", "PRIV", new Base58BitcoinAddressValidator(new PRiVCYParams()));
     }
 
 
-    public static class XuezAddressValidator extends Base58BitcoinAddressValidator {
+    public static class PRiVCYParams extends NetworkParametersAdapter {
 
-        public XuezAddressValidator() {
-            super(new XuezParams());
-        }
-
-        @Override
-        public AddressValidationResult validate(String address) {
-
-            if (!address.matches("^[X][a-km-zA-HJ-NP-Z1-9]{25,34}$"))
-                return AddressValidationResult.invalidStructure();
-
-            return AddressValidationResult.validAddress();
-        }
-    }
-
-
-    public static class XuezParams extends NetworkParametersAdapter {
-
-        public XuezParams() {
-            addressHeader = 48;
-            p2shHeader = 12;
+        public PRiVCYParams() {
+            addressHeader = 55;
+            p2shHeader = 78;
             acceptableAddressCodes = new int[]{addressHeader, p2shHeader};
         }
     }

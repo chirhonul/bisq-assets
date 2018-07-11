@@ -13,27 +13,20 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * CryptoTari is a stellar token issued by account:
+ * GD7UVDDJHJYKUXB4SJFIC6VJDQ4YADQCMRN3KLHJFV4H6NIUAEREVCO7
+ * block explorer: https://stellarchain.io/
  */
 
-package bisq.asset.coins;
+package bisq.asset.tokens;
 
-import bisq.asset.Base58BitcoinAddressValidator;
-import bisq.asset.Coin;
-import bisq.asset.NetworkParametersAdapter;
+import bisq.asset.RegexAddressValidator;
+import bisq.asset.Token;
 
-public class BitcoinInstant extends Coin {
+public class Tari extends Token {
 
-    public BitcoinInstant() {
-        super("Bitcoin Instant", "BTI", new Base58BitcoinAddressValidator(new BitcoinInstantParams()));
-    }
-
-
-    public static class BitcoinInstantParams extends NetworkParametersAdapter {
-
-        public BitcoinInstantParams() {
-            addressHeader = 0x66;
-            p2shHeader = 0x05;
-            acceptableAddressCodes = new int[]{addressHeader, p2shHeader};
-        }
+    public Tari() {
+        super("CryptoTari", "TARI", new RegexAddressValidator("^[a-zA-Z0-9]{56}$"));
     }
 }
